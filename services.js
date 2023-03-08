@@ -1,4 +1,4 @@
-import AppConstants from '@/constants';
+import AppConstants from '@/utility/constants';
 
 import apiService from '@/service/api';
 import authService from '@thzero/library_client_firebase/service';
