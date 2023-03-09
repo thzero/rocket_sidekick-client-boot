@@ -7,7 +7,7 @@ locales.forEach(locale => {
 	resources[locale] = modules[`/src/locales/${locale}.json`];
 });
 
-export default class AppVuei18nBoot extends Vuei18nBaseBoot {
+export default class Vuei18nBoot extends Vuei18nBaseBoot {
 	_initMessages() {
 		return resources;
 	}

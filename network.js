@@ -4,7 +4,7 @@ import LibraryClientUtility from '@thzero/library_client/utility/index';
 
 import BaseBoot from '@thzero/library_client/boot/base';
 
-export default class AppNetworkBoot extends BaseBoot {
+export default class NetworkBoot extends BaseBoot {
 	async execute(framework, router, store) {
 		Network.addListener('networkStatusChange', status => {
 			console.log('Network status changed', status);
