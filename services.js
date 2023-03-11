@@ -2,6 +2,7 @@ import AppConstants from '@/utility/constants';
 
 import apiService from '@/service/api';
 import authService from '@thzero/library_client_firebase/service';
+import featuresService from '@/service/features';
 // import downloadService from '@/service/download';
 import rocketsService from '@/service/rockets';
 // import flightInfoProcessorToolsService from '@/service/tools/flightInfo/index';
@@ -15,7 +16,7 @@ import rocketsService from '@/service/rockets';
 // import foamToolsService from '@/service/tools/foam';
 import mathJsCalculationEngineToolsService from '@/service/tools/engine/mathjs/index';
 import parachuteSizingToolsService from '@/service/tools/parachuteSizing';
-// import restCommunicationService from '@thzero/library_client_service_rest_fetch';
+import restCommunicationService from '@thzero/library_client_service_rest_fetch';
 import thrust2WeightToolsService from '@/service/tools/thrust2Weight';
 import weatherCockingToolsService from '@/service/tools/weathercocking';
 import thrustCurveMotorSearchExternalService from '@/service/external/motorSearchThrustCurve';
@@ -60,9 +61,13 @@ class BaseServiceBoot extends AdminServicesBaseBoot {
 		return new authService();
 	}
 
-	// _initializeCommunicationRest() {
-	// 	return new restCommunicationService();
-	// }
+	_initializeCommunicationRest() {
+		return new restCommunicationService();
+	}
+
+	_initializeFeatures() {
+		return new featuresService();
+	}
 
 	_initializeSettings() {
 		return new settingsService();
