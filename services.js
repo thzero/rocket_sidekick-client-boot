@@ -27,9 +27,9 @@ import userService from '@/service/user';
 import utilityService from '@/service/utility';
 import versionService from '@/service/version';
 
-import AdminServicesBaseBoot from '@thzero/library_client_vue3/boot/baseAdminServices';
+import RootServicesBoot from '@thzero/library_client_vue3/boot/rootService';
 
-class BaseServiceBoot extends AdminServicesBaseBoot {
+class ServiceBoot extends RootServicesBoot {
 	_initialize() {
 		super._initialize();
 
@@ -90,4 +90,4 @@ class BaseServiceBoot extends AdminServicesBaseBoot {
 	}
 }
 
-export default BaseServiceBoot;
+export default ServiceBoot;
