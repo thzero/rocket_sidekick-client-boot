@@ -27,7 +27,7 @@ import userService from '@/service/user';
 import utilityService from '@/service/utility';
 import versionService from '@/service/version';
 
-import RootServicesBoot from '@thzero/library_client_vue3/boot/rootService';
+import RootServicesBoot from '@thzero/library_client_vue3/boot/rootServices';
 
 class ServiceBoot extends RootServicesBoot {
 	_initialize() {
