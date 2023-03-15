@@ -2,8 +2,9 @@ import AppConstants from '@/utility/constants';
 
 import apiService from '@/service/api';
 import authService from '@thzero/library_client_firebase/service';
-import featuresService from '@/service/features';
 // import downloadService from '@/service/download';
+import featuresService from '@/service/features';
+import manufacturersService from '@/service/manufacturers';
 import rocketsService from '@/service/rockets';
 // import flightInfoProcessorToolsService from '@/service/tools/flightInfo/index';
 // import flightInfoProcessorEggtimerToolsService from '@/service/tools/flightInfo/processors/eggtimer';
@@ -37,6 +38,8 @@ class ServiceBoot extends RootServicesBoot {
 		// this._injectService(AppConstants.InjectorKeys.SERVICE_DOWNLOAD, new downloadService());
 
 		this._injectService(AppConstants.InjectorKeys.SERVICE_EXTERNAL_MOTOR_SEARCH, new thrustCurveMotorSearchExternalService());
+
+		this._injectService(AppConstants.InjectorKeys.SERVICE_MANUFACTURERS, new manufacturersService());
 
 		this._injectService(AppConstants.InjectorKeys.SERVICE_ROCKETS, new rocketsService());
 
