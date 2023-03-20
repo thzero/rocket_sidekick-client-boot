@@ -26,6 +26,8 @@ class ServiceBoot extends RootServicesBoot {
 
 		this._injectService(AppSharedConstants.InjectorKeys.SERVICE_API, new apiService());
 
+		this._injectService(AppSharedConstants.InjectorKeys.SERVICE_CHECKLISTS, this._initializeChecklists());
+
 		this._injectService(AppSharedConstants.InjectorKeys.SERVICE_EXTERNAL_MOTOR_SEARCH, new thrustCurveMotorSearchExternalService());
 
 		this._injectService(AppSharedConstants.InjectorKeys.SERVICE_MANUFACTURERS, this._initializeManufacturers());
@@ -42,6 +44,10 @@ class ServiceBoot extends RootServicesBoot {
 
 	_initializeAuth() {
 		return new authService();
+	}
+
+	_initializeChecklists() {
+		throw new NotImplementedError();
 	}
 
 	_initializeCommunicationRest() {
