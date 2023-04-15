@@ -11,6 +11,7 @@ import restCommunicationService from '@thzero/library_client_service_rest_fetch'
 import thrust2WeightToolsService from '@/service/tools/thrust2Weight';
 import weatherCockingToolsService from '@/service/tools/weathercocking';
 import thrustCurveMotorSearchExternalService from '@/service/external/motorSearchThrustCurve';
+import securityService from '@/service/security';
 import settingsService from '@/service/settings';
 import storeService from '@thzero/library_client_vue3_store_pinia/service/store/index'; // STORE TYPE
 // import storeService from '@thzero/library_client_vue3/service/store/vuex'; // STORE TYPE
@@ -68,6 +69,10 @@ class ServiceBoot extends RootServicesBoot {
 
 	_initializeRockets() {
 		throw new NotImplementedError();
+	}
+
+	_initializeSecurity() {
+		return new securityService();
 	}
 
 	_initializeSettings() {
