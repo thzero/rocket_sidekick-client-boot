@@ -6,6 +6,7 @@ import BaseBoot from '@thzero/library_client/boot/base';
 
 export default class NetworkBoot extends BaseBoot {
 	async execute(framework, router, store) {
+		Network.removeAllListeners();
 		Network.addListener('networkStatusChange', status => {
 			console.log('Network status changed', status);
 			console.log('Network status changed', status);
