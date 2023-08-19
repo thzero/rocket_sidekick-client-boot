@@ -36,6 +36,8 @@ class ServiceBoot extends RootServicesBoot {
 
 		this._injectService(AppSharedConstants.InjectorKeys.SERVICE_ROCKETS, this._initializeRockets());
 
+		this._injectService(AppSharedConstants.InjectorKeys.SERVICE_ROCKETSETUPS, this._initializeRocketSetups());
+
 		this._injectService(AppSharedConstants.InjectorKeys.SERVICE_TOOLS_CALCULATION_ENGINE, new mathJsCalculationEngineToolsService());
 
 		this._injectService(AppSharedConstants.InjectorKeys.SERVICE_TOOLS_PARACHUTE_SIZING, new parachuteSizingToolsService());
@@ -68,6 +70,10 @@ class ServiceBoot extends RootServicesBoot {
 	}
 
 	_initializeRockets() {
+		throw new NotImplementedError();
+	}
+
+	_initializeRocketSetups() {
 		throw new NotImplementedError();
 	}
 
