@@ -10,7 +10,8 @@ import parachuteSizingToolsService from '@/service/tools/parachuteSizing';
 import restCommunicationService from '@thzero/library_client_service_rest_fetch';
 import thrust2WeightToolsService from '@/service/tools/thrust2Weight';
 import weatherCockingToolsService from '@/service/tools/weathercocking';
-import thrustCurveMotorSearchExternalService from '@/service/external/motorSearchThrustCurve';
+import partsMotorSearchExternalService from '@/service/external/motorSearchParts';
+// import thrustCurveMotorSearchExternalService from '@/service/external/motorSearchThrustCurve';
 import securityService from '@/service/security';
 import settingsService from '@/service/settings';
 import storeService from '@thzero/library_client_vue3_store_pinia/service/store/index'; // STORE TYPE
@@ -29,7 +30,8 @@ class ServiceBoot extends RootServicesBoot {
 
 		this._injectService(AppSharedConstants.InjectorKeys.SERVICE_CHECKLISTS, this._initializeChecklists());
 
-		this._injectService(AppSharedConstants.InjectorKeys.SERVICE_EXTERNAL_MOTOR_SEARCH, new thrustCurveMotorSearchExternalService());
+		this._injectService(AppSharedConstants.InjectorKeys.SERVICE_EXTERNAL_MOTOR_SEARCH, new partsMotorSearchExternalService());
+		// this._injectService(AppSharedConstants.InjectorKeys.SERVICE_EXTERNAL_MOTOR_SEARCH, new thrustCurveMotorSearchExternalService());
 
 		this._injectService(AppSharedConstants.InjectorKeys.SERVICE_MANUFACTURERS, this._initializeManufacturers());
 		this._injectService(AppSharedConstants.InjectorKeys.SERVICE_PARTS, this._initializeParts());
