@@ -30,18 +30,19 @@ class ServiceBoot extends RootServicesBoot {
 
 		this._injectService(AppSharedConstants.InjectorKeys.SERVICE_CHECKLISTS, this._initializeChecklists());
 
+		this._injectService(AppSharedConstants.InjectorKeys.SERVICE_COUNTRIES, this._initializeCountries());
+
 		this._injectService(AppSharedConstants.InjectorKeys.SERVICE_EXTERNAL_MOTOR_SEARCH, new partsMotorSearchExternalService());
 		// this._injectService(AppSharedConstants.InjectorKeys.SERVICE_EXTERNAL_MOTOR_SEARCH, new thrustCurveMotorSearchExternalService());
 
+		this._injectService(AppSharedConstants.InjectorKeys.SERVICE_LAUNCHES, this._initializeLaunches());
+		this._injectService(AppSharedConstants.InjectorKeys.SERVICE_LOCATIONS, this._initializeLocations());
 		this._injectService(AppSharedConstants.InjectorKeys.SERVICE_MANUFACTURERS, this._initializeManufacturers());
 		this._injectService(AppSharedConstants.InjectorKeys.SERVICE_PARTS, this._initializeParts());
-
 		this._injectService(AppSharedConstants.InjectorKeys.SERVICE_ROCKETS, this._initializeRockets());
-
 		this._injectService(AppSharedConstants.InjectorKeys.SERVICE_ROCKETSETUPS, this._initializeRocketSetups());
 
 		this._injectService(AppSharedConstants.InjectorKeys.SERVICE_TOOLS_CALCULATION_ENGINE, new mathJsCalculationEngineToolsService());
-
 		this._injectService(AppSharedConstants.InjectorKeys.SERVICE_TOOLS_PARACHUTE_SIZING, new parachuteSizingToolsService());
 		this._injectService(AppSharedConstants.InjectorKeys.SERVICE_TOOLS_THRUST2WEIGHT, new thrust2WeightToolsService());
 		this._injectService(AppSharedConstants.InjectorKeys.SERVICE_TOOLS_WEATHERCOCKING, new weatherCockingToolsService());
@@ -59,8 +60,20 @@ class ServiceBoot extends RootServicesBoot {
 		return new restCommunicationService();
 	}
 
+	_initializeCountries() {
+		throw new NotImplementedError();
+	}
+
 	_initializeFeatures() {
 		return new featuresService();
+	}
+
+	_initializeLaunches() {
+		throw new NotImplementedError();
+	}
+
+	_initializeLocations() {
+		throw new NotImplementedError();
 	}
 
 	_initializeManufacturers() {
