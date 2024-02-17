@@ -5,6 +5,7 @@ import NotImplementedError from '@thzero/library_common/errors/notImplemented';
 import apiService from '@/service/api';
 import authService from '@thzero/library_client_firebase/service';
 import featuresService from '@/service/features';
+import inventoryService from '@/service/inventory';
 import mathJsCalculationEngineToolsService from '@/service/tools/engine/mathjs/index';
 import parachuteSizingToolsService from '@/service/tools/parachuteSizing';
 import restCommunicationService from '@thzero/library_client_service_rest_fetch';
@@ -35,6 +36,7 @@ class ServiceBoot extends RootServicesBoot {
 		this._injectService(AppSharedConstants.InjectorKeys.SERVICE_EXTERNAL_MOTOR_SEARCH, new partsMotorSearchExternalService());
 		// this._injectService(AppSharedConstants.InjectorKeys.SERVICE_EXTERNAL_MOTOR_SEARCH, new thrustCurveMotorSearchExternalService());
 
+		this._injectService(AppSharedConstants.InjectorKeys.SERVICE_INVENTORY, new inventoryService());
 		this._injectService(AppSharedConstants.InjectorKeys.SERVICE_LAUNCHES, this._initializeLaunches());
 		this._injectService(AppSharedConstants.InjectorKeys.SERVICE_LOCATIONS, this._initializeLocations());
 		this._injectService(AppSharedConstants.InjectorKeys.SERVICE_MANUFACTURERS, this._initializeManufacturers());
