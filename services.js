@@ -7,12 +7,12 @@ import authService from '@thzero/library_client_firebase/service';
 import featuresService from '@/service/features';
 import inventoryService from '@/service/inventory';
 import mathJsCalculationEngineToolsService from '@/service/tools/engine/mathjs/index';
+import motorService from '@/service/partsMotors';
 import parachuteSizingToolsService from '@/service/tools/parachuteSizing';
 import restCommunicationService from '@thzero/library_client_service_rest_fetch';
 import thrust2WeightToolsService from '@/service/tools/thrust2Weight';
+// import thrustCurveMotorsService from '@/service/external/motorSearchThrustCurve';
 import weatherCockingToolsService from '@/service/tools/weathercocking';
-import partsMotorSearchExternalService from '@/service/external/motorSearchParts';
-// import thrustCurveMotorSearchExternalService from '@/service/external/motorSearchThrustCurve';
 import securityService from '@/service/security';
 import settingsService from '@/service/settings';
 import storeService from '@thzero/library_client_vue3_store_pinia/service/store/index'; // STORE TYPE
@@ -33,8 +33,8 @@ class ServiceBoot extends RootServicesBoot {
 
 		this._injectService(AppSharedConstants.InjectorKeys.SERVICE_COUNTRIES, this._initializeCountries());
 
-		this._injectService(AppSharedConstants.InjectorKeys.SERVICE_EXTERNAL_MOTOR_SEARCH, new partsMotorSearchExternalService());
-		// this._injectService(AppSharedConstants.InjectorKeys.SERVICE_EXTERNAL_MOTOR_SEARCH, new thrustCurveMotorSearchExternalService());
+		this._injectService(AppSharedConstants.InjectorKeys.SERVICE_MOTORS, new motorService());
+		// this._injectService(AppSharedConstants.InjectorKeys.SERVICE_MOTORS, new thrustCurveMotorsService());
 
 		this._injectService(AppSharedConstants.InjectorKeys.SERVICE_INVENTORY, new inventoryService());
 		this._injectService(AppSharedConstants.InjectorKeys.SERVICE_LAUNCHES, this._initializeLaunches());
